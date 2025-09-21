@@ -1,57 +1,61 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Linkedin, Download, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, MessageCircle } from "lucide-react";
 
 const Contact = () => {
-
+  // Contact info list
   const contactInfo = [
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Phone",
       value: "+91 6351220752",
       href: "tel:+916351220752",
-      action: "Call Now"
+      action: "Call Now",
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
       value: "jadavrahiten07@gmail.com",
       href: "mailto:jadavrahiten07@gmail.com",
-      action: "Email Me"
+      action: "Email Me",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       label: "Location",
       value: "Ahmedabad, Gujarat",
       href: "#",
-      action: "View Map"
+      action: "View Map",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
       value: "hiten-jadavra",
       href: "https://www.linkedin.com/in/hiten-jadavra",
-      action: "Connect"
-    }
+      action: "Connect",
+    },
   ];
 
+  // Language skills
   const languages = [
     { name: "English", level: "Fluent" },
     { name: "Hindi", level: "Fluent" },
-    { name: "Gujarati", level: "Native" }
+    { name: "Gujarati", level: "Native" },
   ];
 
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
+        {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on your next project? Let's discuss how we can work together.
+            Ready to collaborate on your next project? Let's discuss how we can
+            work together.
           </p>
         </div>
 
+        {/* Contact + Side Info */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="lg:col-span-2 space-y-6">
@@ -65,21 +69,37 @@ const Contact = () => {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {contactInfo.map((contact, index) => (
-                    <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
+                    <div
+                      key={index}
+                      className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                    >
+                      {/* Icon */}
                       <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
                         {contact.icon}
                       </div>
+
+                      {/* Label + Value */}
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm text-muted-foreground">{contact.label}</h4>
-                        <p className="font-medium">{contact.value}</p>
+                        <h4 className="font-semibold text-sm text-muted-foreground">
+                          {contact.label}
+                        </h4>
+                        <p className="font-medium break-all">{contact.value}</p>
                       </div>
-                      <Button 
-                        variant="outline" 
+
+                      {/* Action Button */}
+                      <Button
+                        variant="outline"
                         size="sm"
                         asChild
                         className="hover:bg-primary hover:text-primary-foreground transition-colors"
                       >
-                        <a href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                        <a
+                          href={contact.href}
+                          target={
+                            contact.href.startsWith("http") ? "_blank" : undefined
+                          }
+                          rel="noopener noreferrer"
+                        >
                           {contact.action}
                         </a>
                       </Button>
@@ -92,16 +112,20 @@ const Contact = () => {
             {/* Call to Action */}
             <Card className="border-0 shadow-soft hero-gradient text-primary-foreground">
               <CardContent className="text-center py-8">
-                <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
+                <h3 className="text-2xl font-bold mb-4">
+                  Ready to Start Your Project?
+                </h3>
                 <p className="mb-6 opacity-90">
-                  I'm available for new opportunities and exciting challenges. Let's build something amazing together!
+                  I'm available for new opportunities and exciting challenges.
+                  Let's build something amazing together!
                 </p>
               </CardContent>
             </Card>
           </div>
 
-          {/* Languages & Additional Info */}
+          {/* Languages & Professional Info */}
           <div className="space-y-6">
+            {/* Languages */}
             <Card className="border-0 shadow-soft">
               <CardHeader>
                 <CardTitle>Languages</CardTitle>
@@ -109,7 +133,10 @@ const Contact = () => {
               <CardContent>
                 <div className="space-y-4">
                   {languages.map((language, index) => (
-                    <div key={index} className="flex justify-between items-center">
+                    <div
+                      key={index}
+                      className="flex justify-between items-center"
+                    >
                       <span className="font-medium">{language.name}</span>
                       <Badge variant="secondary">{language.level}</Badge>
                     </div>
@@ -118,6 +145,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
+            {/* Status */}
             <Card className="border-0 shadow-soft">
               <CardHeader>
                 <CardTitle>Professional Status</CardTitle>

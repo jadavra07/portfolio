@@ -43,30 +43,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <div className="grid grid-cols-2 gap-2">
-              <button 
-                onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-left text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                Skills
-              </button>
-              <button 
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-left text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                Experience
-              </button>
-              <button 
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-left text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-left text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                Contact
-              </button>
+              {['skills', 'experience', 'projects', 'contact'].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })}
+                  className="text-left text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -87,26 +72,29 @@ const Footer = () => {
                     target={social.href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
                     aria-label={social.label}
+                    className="flex items-center justify-center w-full h-full"
                   >
                     {social.icon}
                   </a>
                 </Button>
               ))}
             </div>
+
             <div className="text-sm text-primary-foreground/60 space-y-1">
               <p>📧 jadavrahiten07@gmail.com</p>
               <p>📱 +91 6351220752</p>
               <p>📍 Ahmedabad, Gujarat</p>
             </div>
+
             <div className="mt-6">
               <Button
-                variant="secondary"
+                variant="outline"
                 size="lg"
-                className="w-full md:w-auto px-8"
+                className="w-full md:w-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary-foreground/90 transition-all duration-300"
                 asChild
               >
-                <a href="mailto:jadavrahiten07@gmail.com">
-                  <Mail className="w-5 h-5 mr-2" />
+                <a href="mailto:jadavrahiten07@gmail.com" className="flex items-center gap-2 justify-center">
+                  <Mail className="w-5 h-5" />
                   Connect With Me
                 </a>
               </Button>
@@ -117,8 +105,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-red-400 fill-current" />
+            <span>Made</span>
             <span>by Hiten Jadavra</span>
             <span>© {currentYear}</span>
           </div>
