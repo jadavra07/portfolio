@@ -46,10 +46,11 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="flex items-center gap-2"
+              variant="solid"
+              className="flex items-center gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all duration-300"
               asChild
             >
-              <a href="/resume.pdf" download>
+              <a href="/Hiten_resume.pdf" download className="flex items-center gap-2">
                 <Download className="w-5 h-5" />
                 Download Resume
               </a>

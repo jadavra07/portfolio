@@ -58,13 +58,15 @@ const Footer = () => {
           {/* Contact & Social */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Connect With Me</h4>
+
+            {/* Social Buttons */}
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social, index) => (
                 <Button
                   key={index}
-                  variant="outline"
+                  variant="solid"
                   size="sm"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all duration-300"
+                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all duration-300"
                   asChild
                 >
                   <a 
@@ -80,17 +82,19 @@ const Footer = () => {
               ))}
             </div>
 
+            {/* Contact Info */}
             <div className="text-sm text-primary-foreground/60 space-y-1">
               <p>📧 jadavrahiten07@gmail.com</p>
               <p>📱 +91 6351220752</p>
               <p>📍 Ahmedabad, Gujarat</p>
             </div>
 
+            {/* Connect With Me Button */}
             <div className="mt-6">
               <Button
-                variant="outline"
+                variant="solid"
                 size="lg"
-                className="w-full md:w-auto px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary-foreground/90 transition-all duration-300"
+                className="w-full md:w-auto px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all duration-300"
                 asChild
               >
                 <a href="mailto:jadavrahiten07@gmail.com" className="flex items-center gap-2 justify-center">
@@ -106,15 +110,16 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
             <span>Made</span>
+            <Heart className="w-4 h-4 text-red-500" />
             <span>by Hiten Jadavra</span>
             <span>© {currentYear}</span>
           </div>
           
           <Button
-            variant="outline"
+            variant="solid"
             size="sm"
             onClick={scrollToTop}
-            className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all duration-300"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all duration-300"
           >
             Back to Top ↑
           </Button>
