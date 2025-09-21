@@ -61,9 +61,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
-            <span>Made</span>
-            <Heart className="w-4 h-4 text-red-500" />
-            <span>by Hiten Jadavra</span>
+            <span>Made by Hiten Jadavra</span>
             <span>© {currentYear}</span>
           </div>
           
