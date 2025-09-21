@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System - Hiten Jadavra
+Color Palette: #FFD3AC, #CCBEB1, #664C36, #331C08
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Primary Brand Colors */
+    --background: 30 45% 85%; /* #FFD3AC warm peach */
+    --foreground: 30 60% 12%; /* #331C08 dark brown */
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 60% 12%;
+
+    /* Professional Brown Theme */
+    --primary: 30 30% 30%; /* #664C36 medium brown */
+    --primary-foreground: 30 45% 85%;
+    --primary-hover: 30 60% 12%; /* #331C08 darker brown */
+
+    /* Warm Accent */
+    --secondary: 30 15% 75%; /* #CCBEB1 light brown */
+    --secondary-foreground: 30 60% 12%;
+
+    --muted: 30 45% 85%;
+    --muted-foreground: 30 30% 30%;
+
+    --accent: 30 30% 30%;
+    --accent-foreground: 30 45% 85%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 25% 80%;
+    --input: 30 25% 80%;
+    --ring: 30 30% 30%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio Specific Colors */
+    --hero-gradient: linear-gradient(135deg, hsl(30 30% 30%), hsl(30 60% 12%));
+    --section-gradient: linear-gradient(135deg, hsl(30 45% 85%), hsl(0 0% 100%));
+    --skill-badge: 30 30% 30%;
+    --skill-badge-foreground: 30 45% 85%;
+    
+    /* Professional Shadows */
+    --shadow-soft: 0 4px 20px -8px hsl(30 30% 30% / 0.25);
+    --shadow-strong: 0 8px 30px -12px hsl(30 60% 12% / 0.35);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 60% 12%; /* #331C08 dark brown */
+    --foreground: 30 45% 85%;
+
+    --card: 30 50% 18%;
+    --card-foreground: 30 45% 85%;
+
+    --popover: 30 50% 18%;
+    --popover-foreground: 30 45% 85%;
+
+    --primary: 30 45% 85%;
+    --primary-foreground: 30 60% 12%;
+    --primary-hover: 30 45% 78%;
+
+    --secondary: 30 25% 35%;
+    --secondary-foreground: 30 45% 85%;
+
+    --muted: 30 50% 20%;
+    --muted-foreground: 30 25% 70%;
+
+    --accent: 30 45% 85%;
+    --accent-foreground: 30 60% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 50% 25%;
+    --input: 30 50% 25%;
+    --ring: 30 45% 85%;
+    
+    --hero-gradient: linear-gradient(135deg, hsl(30 60% 12%), hsl(30 30% 30%));
+    --section-gradient: linear-gradient(135deg, hsl(30 50% 18%), hsl(30 60% 12%));
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-hover;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .section-gradient {
+    background: var(--section-gradient);
+  }
+  
+  .text-gradient {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .skill-tag {
+    @apply bg-skill-badge text-skill-badge-foreground px-3 py-1.5 rounded-full text-sm font-medium 
+           transition-all duration-300 hover:scale-105 hover:shadow-md;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-strong hover:-translate-y-1;
+  }
+}
