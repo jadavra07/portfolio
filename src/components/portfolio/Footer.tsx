@@ -1,26 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Linkedin, Mail, Phone, Github } from "lucide-react";
+import { Heart, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    {
-      icon: <Linkedin className="w-5 h-5" />,
-      href: "https://www.linkedin.com/in/hiten-jadavra",
-      label: "LinkedIn"
-    },
-    {
-      icon: <Mail className="w-5 h-5" />,
-      href: "mailto:jadavrahiten07@gmail.com",
-      label: "Email"
-    },
-    {
-      icon: <Phone className="w-5 h-5" />,
-      href: "tel:+916351220752",
-      label: "Phone"
-    }
-  ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -55,41 +37,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact & Social */}
+          {/* Contact & Connect Button */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Connect With Me</h4>
 
-            {/* Social Buttons */}
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => (
-                <Button
-                  key={index}
-                  variant="solid"
-                  size="sm"
-                  className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-all duration-300"
-                  asChild
-                >
-                  <a 
-                    href={social.href} 
-                    target={social.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="flex items-center justify-center w-full h-full"
-                  >
-                    {social.icon}
-                  </a>
-                </Button>
-              ))}
-            </div>
-
-            {/* Contact Info */}
-            <div className="text-sm text-primary-foreground/60 space-y-1">
-              <p>📧 jadavrahiten07@gmail.com</p>
-              <p>📱 +91 6351220752</p>
-              <p>📍 Ahmedabad, Gujarat</p>
-            </div>
-
-            {/* Connect With Me Button */}
+            {/* Only main Connect With Me Button */}
             <div className="mt-6">
               <Button
                 variant="solid"
